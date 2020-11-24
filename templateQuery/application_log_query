@@ -1,0 +1,100 @@
+{
+    "timeout": "30000ms",
+    "version": true,
+    "size": 500,
+    "sort": [
+      {
+        "@timestamp": {
+          "order": "desc",
+          "unmapped_type": "string"
+        }
+      }
+    ],
+    "_source": {
+      "excludes": []
+    },
+    "stored_fields": [
+      "*"
+    ],
+    "script_fields": {},
+    "docvalue_fields": [
+      {
+        "field": "@timestamp",
+        "format": "date_time"
+      },
+      {
+        "field": "request_received_at",
+        "format": "date_time"
+      },
+      {
+        "field": "request_sent_at",
+        "format": "date_time"
+      },
+      {
+        "field": "response_received_at",
+        "format": "date_time"
+      },
+      {
+        "field": "response_sent_at",
+        "format": "date_time"
+      },
+      {
+        "field": "written_at",
+        "format": "date_time"
+      }
+    ],
+    "query": {
+      "bool": {
+        "must": [
+          {
+            "match_all": {}
+          },
+          {
+            "match_all": {}
+          }
+        ],
+        "filter": [
+          {
+            "bool": {
+              "should": [
+                {
+                  "match_phrase": {
+                    "type": "log"
+                  }
+                },
+                {
+                  "match_phrase": {
+                    "type": "trace"
+                  }
+                }
+              ],
+              "minimum_should_match": 1
+            }
+          },
+          {
+            "range": {
+              "@timestamp": {
+                "format": "strict_date_optional_time",
+                "gte": "2020-11-18T10:44:03.168Z",
+                "lte": "2020-11-18T10:59:03.168Z"
+              }
+            }
+          }
+        ],
+        "should": [],
+        "must_not": []
+      }
+    },
+    "highlight": {
+      "pre_tags": [
+        "@kibana-highlighted-field@"
+      ],
+      "post_tags": [
+        "@/kibana-highlighted-field@"
+      ],
+      "fields": {
+        "*": {}
+      },
+      "fragment_size": 2147483647
+    }
+  }

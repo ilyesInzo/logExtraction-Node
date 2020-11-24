@@ -1,0 +1,11 @@
+{
+  "name": "log-extraction",
+  "version": "1.0.17",
+  "dependencies": {
+    "request": "2.72.0",
+    "async": "1.4.2"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}
