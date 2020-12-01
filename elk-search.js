@@ -4,7 +4,11 @@ const { getKibanaRequest } = require('./kibanaQuery');
 const reqHelper = require("./requestHelper");
 
 const username = process.env.CF_USER || "ilyes.mansour@focus-corporation.com";
-const password = process.env.CF_PASSWORD || "xxx";
+const password = process.env.CF_PASSWORD || "Psy4tr@1";
+
+const clientId = "sb-na-80f576ec-14c8-46de-9470-e584ec8bf4d9!t17646";
+const clientSecret = "btuHh3Fjt3a47cWwi7i6KX0t3EA=";
+
 
 const kbnVersion = '7.4.2';
 
@@ -12,6 +16,7 @@ const uaaURL = reqHelper.uaaUrl();
 const logsUrl = reqHelper.logUrl();
 
 var queryTempalte, minuteRange;
+const xsuaa = "https://0f33f841trial.authentication.us10.hana.ondemand.com";
 
 _getTokenAccess2 = (callback) => {
 
@@ -39,7 +44,7 @@ _getTokenAccess2 = (callback) => {
 
 
 _getTokenAccess = (callback) => {
-
+console.log(uaaURL)
     request.post({
         url: uaaURL + "/oauth/token",
         form: {
@@ -48,8 +53,7 @@ _getTokenAccess = (callback) => {
             client_id: "cf",
             "grant_type": "password",
             response_type: "token"
-        },
-        timeout: 10000
+        }
     }, function (error, response, body) {
         console.log("**********************1st req************************");
         console.log('statusCode: ', response.statusCode);
