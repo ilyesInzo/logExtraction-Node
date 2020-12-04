@@ -19,19 +19,19 @@ Like what was done with HANA connection, we will add sqlite connection section i
 
 * file > settings > open Preferences
 
-![](images/pmge-graphics-library-valueFlowGeneration-Model.PNG)
+![](images/goto_to_settings.PNG)
 
 * open setting.json under workspace
 
-![](images/pmge-graphics-library-valueFlowGeneration-Model.PNG)
+![](images/edit_setting.PNG)
 
 * add connection pool
 
-![](images/pmge-graphics-library-valueFlowGeneration-Model.PNG)
+![](images/add_db_connection.PNG)
 
 now we are able to connect to our local db
 
-![](images/pmge-graphics-library-valueFlowGeneration-Model.PNG)
+![](images/connect_to_db.PNG)
 
 ## Local test
 
@@ -39,9 +39,10 @@ now we are able to connect to our local db
 
 create a .env file and add your credentials to be able to get logs from kibana later
 
-![](images/pmge-graphics-library-valueFlowGeneration-Model.PNG)
 
-P.S. this allow us to run the default server.js and use cds watch later
+![](images/add_credentials.PNG)
+
+P.S. CDS_RUN_DEFAULT=true will allow us to run the default server.js and use cds watch later
 
 #### 2- runnig the application
 
@@ -51,15 +52,16 @@ P.S. this allow us to run the default server.js and use cds watch later
 
 the port is exposed, you can run open and run the app
 
+![](images/running_app_console.PNG)
+
+![](images/running_app.PNG)
+
 when testings the logs you have to enter another credentials (not yours) that belongs to fake users allowed (have different scopes and roles) to access services.
+
+![](images/enter_local_user_credentials.PNG)
 
 you can find those credentials in the .cdsrc.json file (e.g user alice and pw 123)
 
-
-
-[ValueFlow Generation](https://wiki.wdf.sap.corp/wiki/display/~C5284956/VF+Generation)
-
-[Diagram Layout](https://wiki.wdf.sap.corp/wiki/display/~C5284956/Diagram+Layout)
-
+![](images/check_credential_to_access_services.PNG)
 
 
