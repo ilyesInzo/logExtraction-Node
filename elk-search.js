@@ -4,7 +4,7 @@ const { getKibanaRequest } = require('./kibanaQuery');
 const reqHelper = require("./requestHelper");
 
 const username = process.env.CF_USER || "ilyes.mansour@focus-corporation.com";
-const password = process.env.CF_PASSWORD || "Psy4tr@1";
+const password = process.env.CF_PASSWORD || "xxx";
 
 const clientId = "sb-na-80f576ec-14c8-46de-9470-e584ec8bf4d9!t17646";
 const clientSecret = "btuHh3Fjt3a47cWwi7i6KX0t3EA=";
