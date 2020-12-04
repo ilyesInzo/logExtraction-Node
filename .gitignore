@@ -9,4 +9,4 @@ lib/
 /node_modules/
 .idea/
 .DS_Store
-.xyz
+test-xyz/
